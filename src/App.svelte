@@ -2,6 +2,7 @@
   import Obj from "./components/Obj.svelte";
   import { formConfig } from "./store/form-config";
   import { onMount, onDestroy } from "svelte";
+  import Button, { Label } from "@smui/button";
 
   let form;
   let value;
@@ -34,14 +35,11 @@
   };
 </script>
 
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Brand</a>
-  <button class="navbar-toggler" type="button">
-    <span class="navbar-toggler-icon" />
-  </button>
-</nav>
 {#if form != null && value != null}
-  <div class="container mt-4 mb-4">
+  <div>
+    <Button>
+      <Label>Do Something</Label>
+    </Button>
     <Obj
       bind:form
       value={value[form.property]}
